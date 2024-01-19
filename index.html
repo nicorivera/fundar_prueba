@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundar - Energía primaria proveniente de fuentes bajas de carbono</title>
+    <link rel="shortcut icon" href="./ico.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="graph">
+      <div class="divHeader">
+        <a href="https://fund.ar/" target="_blank" id="logo"><img src="./img/logo_fundar.png" alt="logo Fundar" id="logoFundar"></a>
+        <div class="divTitulo">
+          <h3 class="titulo">Porcentaje de la energía primaria proveniente de fuentes bajas en carbono</h3>
+          <p class="bajada">La energía baja en carbono se define como la suma de fuentes nucleares y renovables. Las fuentes renovables incluyen energía hidroeléctrica, solar, eólica, geotérmica, undimotriz y mareomotriz y bioenergía. No se incluyen los biocombustibles tradicionales.</p>
+        </div>
+      </div>
+      <div class="divBotones">
+        <button class="paisesBtn" id="paisesBtn">Seleccionar países</button> 
+        <div class="contBotones">
+          <a class="downloadBtn" id="btnDown" download="./data/energia_baja_carbono.csv">Descargar</a>
+          <button id="compartirBtn" class="compartirBtn">Compartir</button>
+          <button class="fullBtn" id="fullBtn"><img src="./img/full.png" alt="Imagen fullscreen"></button>
+        </div>
+      </div>
+
+      <!-- CHART -->
+      <div id="chart-cont">
+        <div id="contPaises">
+          <div id="divBusca">
+            <div id="divInput">
+              <input type="text" name="buscar" placeholder="Buscar" id="buscador">
+            </div>
+            <a id="borrar">Borrar selección</a>
+            <div id="close">x</div>
+          </div>
+          <form id="formPaises"></form>
+        </div>
+      </div>
+
+      <p class="fuente">Fuente: Our World in Data</p>
+      <p class="nota">Nota: La energía primaria se calcula utilizando el "método de sustitución", que tiene en cuenta las ineficiencias de la producción de energía de los combustibles fósiles.
+      </p>
+    </div>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

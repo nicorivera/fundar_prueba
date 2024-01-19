@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFEFEF;
+}
+#graph{
+    max-width: 850px;
+    margin: auto;
+}
+#logoFundar{
+    width: 60px;
+    margin: 5px 30px 10px 0;
+}
+.divHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 40px;
+    border-bottom: 1px solid black;
+    padding-bottom: 30px;
+}
+.divTitulo{
+    width: 80%;
+    margin: auto;
+}
+.titulo{
+    font-size: 18px;
+    font-family: "Chivo Mono";
+    margin-top: 0;
+    font-weight: 400;
+}
+.bajada{
+    font-family: "Chivo";
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+.divBotones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 30px;
+    position: relative;
+}
+.downloadBtn, .compartirBtn, .paisesBtn{
+    font-family: "Chivo Mono";
+    font-size: 15px;
+    font-weight: 300;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.paisesBtn{
+    background-color: #ABBABA;
+}
+.downloadBtn:hover, .compartirBtn:hover, .btn-tercero:hover, .fullBtn:hover{
+    background-color: #ABBABA;
+}
+.paisesBtn:hover{
+    background-color: white;
+}
+.fullBtn{
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+:fullscreen, ::backdrop {
+    background-color: #EFEFEF;
+}
+.fullBtn img{
+    width: 19px;
+    height: 19px;
+    margin: 1px auto;
+}
+#chart-cont{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+#contPaises{
+    display: none;
+}
+#contPaises.ver{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    left: 0;
+    top: 0; 
+    width: 95%;
+    height: 500px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 15px;
+    padding-bottom: 25px;
+    z-index: 1000;
+}
+#divBusca{
+    width: 97%;
+    margin: 5px auto 25px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+#divInput{
+    position: relative;
+    width: 60%;
+    align-self: flex-start;
+    margin: auto;
+    margin-left: 0;
+}
+#divInput::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('./img/lupa.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+}
+#buscador{
+    width: 90%;
+    background-color: black;
+    font-family: "Chivo Mono";
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin: auto;
+}
+#borrar{
+    background-color: white;
+    border: 1px solid black;
+    font-family: "Chivo Mono";
+    font-weight: 300;
+    font-size: 14px;
+    color: black;
+    border-radius: 20px;
+    padding: 5px 10px;
+    align-self: flex-end;
+    margin: auto;
+    margin-right: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+#borrar:hover{
+    background-color: black;
+    color: white;
+}
+#close{
+    align-self: flex-end;
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    font-size: 16px;
+    line-height: 0.7;
+    margin: auto;
+    margin-right: 0;
+    text-align: center;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: all .3s ease;
+    border: 1px solid black;
+}
+#close:hover{
+    background-color: white;
+    color: black;
+}
+#formPaises{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0px 15px;
+    width: 95%;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+#formPaises label input[type="checkbox"], #formPaises label input[type="checkbox"]:checked {
+    -webkit-appearance: none;
+    appearance: none;
+}
+#formPaises label{
+    font-family: "Chivo Mono";
+    font-weight: 300;
+    padding: 8px 5px 8px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 0 0 31%;
+}
+#formPaises label input[type="checkbox"], #formPaises label input.check{
+    background-color: white;
+    border: 1px solid black;
+    width: 18px;
+    height: 18px;
+    margin: 2px 10px 2px 3px;
+    vertical-align: middle;
+}
+#formPaises label input[type="checkbox"]:checked, #formPaises label input.check:checked {
+    background-color: black;
+}
+#formPaises label input.si{
+    display: inline;
+}
+#formPaises label input.no{
+    display: none;
+}
+/* TOOLTIP */
+.tooltip{
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px 0;
+}
+.tooltip .anio{
+    width: 100%;
+    font-family: "Chivo Mono";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 5px auto 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.tooltip .pais{
+    font-family: "Chivo Mono";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+    margin: 5px auto;
+    padding: 0 10px;
+}
+.tooltip .pais .punto{
+    font-size: 15px;
+    margin: auto 10px;
+    margin-left: 2px;
+}
+.fuente, .nota{
+    font-family: "Chivo Mono";
+    font-size: 12px;
+    margin: 20px 0;
+    letter-spacing: -.2px;
+}
+.contBotones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+}
+#formPaises::-webkit-scrollbar {
+    width: 10px;
+}
+/* Scroll */
+#formPaises::-webkit-scrollbar-track {
+    background: #efefef;
+    border-radius: 30px;
+}
+/* Scroll handle */
+#formPaises::-webkit-scrollbar-thumb {
+    background: #acbabb;
+    height: 50px;
+}
+/* Scroll handle hover */
+#formPaises::-webkit-scrollbar-thumb:hover {
+    background: #9aa5a6;
+}
+@media(max-width: 600px){
+    #graph{
+        max-width: 100%;
+        margin: 20px;
+    }
+    .titulo {
+        font-size: 17px;
+    }
+    .bajada {
+        font-size: 14px;
+    }
+    .paisesBtn{
+        font-size: 12px;
+    }
+    .fullBtn {
+        height: 26px;
+        width: 26px;
+    }
+    .fullBtn img {
+        width: 16px;
+        height: 16px;
+    }
+    .fuente, .nota {
+        font-size: 10px;
+    }
+    .contBotones{
+        justify-content: space-between;
+        margin: auto;
+        width: 50%;
+    }
+    #divBusca{
+        width: 97%;
+        flex-direction: column;
+    }
+    #divInput {
+        width: 100%;
+    }
+    #borrar {
+        margin: 10px auto;
+    }
+    #close {
+        margin: auto;
+    }
+    #formPaises label {
+        flex: 0 0 44%;
+    }
+}
+/* Esconde logo amCharts */
+.am5-tooltip-container, .am5-layer-30{
+    top: -10000px !important;
+}

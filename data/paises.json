@@ -1,0 +1,310 @@
+[
+ {
+   "pais": "Alemania",
+   "iso3": "DEU"
+ },
+ {
+   "pais": "Arabia Saudita",
+   "iso3": "SAU"
+ },
+ {
+   "pais": "Argelia",
+   "iso3": "DZA"
+ },
+ {
+   "pais": "Argentina",
+   "iso3": "ARG"
+ },
+ {
+   "pais": "Australia",
+   "iso3": "AUS"
+ },
+ {
+   "pais": "Austria",
+   "iso3": "AUT"
+ },
+ {
+   "pais": "Azerbaiyán",
+   "iso3": "AZE"
+ },
+ {
+   "pais": "Bangladesh",
+   "iso3": "BGD"
+ },
+ {
+   "pais": "Bélgica",
+   "iso3": "BEL"
+ },
+ {
+   "pais": "Bielorrusia",
+   "iso3": "BLR"
+ },
+ {
+   "pais": "Brasil",
+   "iso3": "BRA"
+ },
+ {
+   "pais": "Bulgaria",
+   "iso3": "BGR"
+ },
+ {
+   "pais": "Canadá",
+   "iso3": "CAN"
+ },
+ {
+   "pais": "Chile",
+   "iso3": "CHL"
+ },
+ {
+   "pais": "China",
+   "iso3": "CHN"
+ },
+ {
+   "pais": "Colombia",
+   "iso3": "COL"
+ },
+ {
+   "pais": "Croacia",
+   "iso3": "HRV"
+ },
+ {
+   "pais": "Dinamarca",
+   "iso3": "DNK"
+ },
+ {
+   "pais": "Ecuador",
+   "iso3": "ECU"
+ },
+ {
+   "pais": "Egipto",
+   "iso3": "EGY"
+ },
+ {
+   "pais": "Eslovaquia",
+   "iso3": "SVK"
+ },
+ {
+   "pais": "Eslovenia",
+   "iso3": "SVN"
+ },
+ {
+   "pais": "España",
+   "iso3": "ESP"
+ },
+ {
+   "pais": "Estados Unidos",
+   "iso3": "USA"
+ },
+ {
+   "pais": "Estonia",
+   "iso3": "EST"
+ },
+ {
+   "pais": "Filipinas",
+   "iso3": "PHL"
+ },
+ {
+   "pais": "Finlandia",
+   "iso3": "FIN"
+ },
+ {
+   "pais": "Francia",
+   "iso3": "FRA"
+ },
+ {
+   "pais": "Grecia",
+   "iso3": "GRC"
+ },
+ {
+   "pais": "Hong Kong (China)",
+   "iso3": "HKG"
+ },
+ {
+   "pais": "Hungría",
+   "iso3": "HUN"
+ },
+ {
+   "pais": "India",
+   "iso3": "IND"
+ },
+ {
+   "pais": "Indonesia",
+   "iso3": "IDN"
+ },
+ {
+   "pais": "Iraq",
+   "iso3": "IRQ"
+ },
+ {
+   "pais": "Irán",
+   "iso3": "IRN"
+ },
+ {
+   "pais": "Irlanda",
+   "iso3": "IRL"
+ },
+ {
+   "pais": "Islandia",
+   "iso3": "ISL"
+ },
+ {
+   "pais": "Israel",
+   "iso3": "ISR"
+ },
+ {
+   "pais": "Italia",
+   "iso3": "ITA"
+ },
+ {
+   "pais": "Japón",
+   "iso3": "JPN"
+ },
+ {
+   "pais": "Kazajstán",
+   "iso3": "KAZ"
+ },
+ {
+   "pais": "Letonia",
+   "iso3": "LVA"
+ },
+ {
+   "pais": "Lituania",
+   "iso3": "LTU"
+ },
+ {
+   "pais": "Luxemburgo",
+   "iso3": "LUX"
+ },
+ {
+   "pais": "Malasia",
+   "iso3": "MYS"
+ },
+ {
+   "pais": "Marruecos",
+   "iso3": "MAR"
+ },
+ {
+   "pais": "México",
+   "iso3": "MEX"
+ },
+ {
+   "pais": "Mundo",
+   "iso3": "OWID_WRL"
+ },
+ {
+   "pais": "Noruega",
+   "iso3": "NOR"
+ },
+ {
+   "pais": "Nueva Zelanda",
+   "iso3": "NZL"
+ },
+ {
+   "pais": "Omán",
+   "iso3": "OMN"
+ },
+ {
+   "pais": "Países Bajos",
+   "iso3": "NLD"
+ },
+ {
+   "pais": "Pakistán",
+   "iso3": "PAK"
+ },
+ {
+   "pais": "Perú",
+   "iso3": "PER"
+ },
+ {
+   "pais": "Polonia",
+   "iso3": "POL"
+ },
+ {
+   "pais": "Portugal",
+   "iso3": "PRT"
+ },
+ {
+   "pais": "Reino Unido",
+   "iso3": "GBR"
+ },
+ {
+   "pais": "República Checa",
+   "iso3": "CZE"
+ },
+ {
+   "pais": "República de Corea",
+   "iso3": "KOR"
+ },
+ {
+   "pais": "República del Norte de Macedonia",
+   "iso3": "MKD"
+ },
+ {
+   "pais": "Rumania",
+   "iso3": "ROU"
+ },
+ {
+   "pais": "Rusia",
+   "iso3": "RUS"
+ },
+ {
+   "pais": "Singapur",
+   "iso3": "SGP"
+ },
+ {
+   "pais": "Sri Lanka",
+   "iso3": "LKA"
+ },
+ {
+   "pais": "Sudáfrica",
+   "iso3": "ZAF"
+ },
+ {
+   "pais": "Suecia",
+   "iso3": "SWE"
+ },
+ {
+   "pais": "Suiza",
+   "iso3": "CHE"
+ },
+ {
+   "pais": "Tailandia",
+   "iso3": "THA"
+ },
+ {
+   "pais": "Taiwan (China)",
+   "iso3": "TWN"
+ },
+ {
+   "pais": "Trinidad y Tobago",
+   "iso3": "TTO"
+ },
+ {
+   "pais": "Turkmenistán",
+   "iso3": "TKM"
+ },
+ {
+   "pais": "Turquía",
+   "iso3": "TUR"
+ },
+ {
+   "pais": "Ucrania",
+   "iso3": "UKR"
+ },
+ {
+   "pais": "Unión de Repúblicas Socialistas Soviéticas (URSS)",
+   "iso3": "OWID_USS"
+ },
+ {
+   "pais": "Uzbekistán",
+   "iso3": "UZB"
+ },
+ {
+   "pais": "Venezuela",
+   "iso3": "VEN"
+ },
+ {
+   "pais": "Vietnam",
+   "iso3": "VNM"
+ }
+]
