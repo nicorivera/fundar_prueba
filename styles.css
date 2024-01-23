@@ -239,6 +239,7 @@ body {
     background-color: white;
     border: 1px solid black;
     padding: 5px 0;
+    text-align: left;
 }
 .tooltip .anio{
     width: 100%;
@@ -256,7 +257,6 @@ body {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5;
-    text-align: center;
     margin: 5px auto;
     padding: 0 10px;
 }

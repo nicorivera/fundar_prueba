@@ -368,23 +368,44 @@ const createLineSeries = (pais) => {
       opacity: 0,
       toggleKey: "active",
       pointerOrientation: "horizontal",
-      tooltipHTML: "<div class='tooltip'><p class='anio'>{anioString}</p><p class='pais'><span style='color:{colorPais};' class='punto'>&#9679</span>{pais}: {valor_en_porcentaje.formatNumber('#.00')}%</p></div>",
       interactive: true,
-      fill: '#000000',
-    });
+      fill: "#000000",
+    })
 
     circle.states.create("default", {
       opacity: 0,
-    });
+    })
 
     circle.states.create("hover", {
       opacity: 1,
-    });
+    })
+    circle.adapters.add("tooltipHTML", function (text, target) {
+      let divTool = `<div class="tooltip">`;
+      if (target.dataItem) {
+        const dataItem = target.dataItem.dataContext
+
+        const hoverCountries = parsedData
+          .filter((d) => d.anioString === dataItem.anioString && selectedCountries.includes(d.iso3))
+          .map((d) => {
+            divTool += `<p class="anio">${d.anioString}</p>`;
+            divTool += `<p class="pais"><span style='color:${d.colorPais};' class='punto'>&#9679</span>${d.pais}: ${d.valor_en_porcentaje.toFixed(2)}%</p>`;
+            // return divTool
+          })
+          .map((d) => {
+            return divTool
+          })
+          let soloPais = new Set(hoverCountries)
+          let arrPais = Array.from(soloPais)
+          divTool += `</div>`;
+          return arrPais
+      }
+      return text
+    })
 
     return am5.Bullet.new(root, {
       sprite: circle,
-    });
-  });
+    })
+  })
 
   // Hacer gráfico full screen
   const verFull = () => {
