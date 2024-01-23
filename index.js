@@ -370,6 +370,7 @@ const createLineSeries = (pais) => {
       pointerOrientation: "horizontal",
       interactive: true,
       fill: "#000000",
+      keepTargetHover: true,
     })
 
     circle.states.create("default", {
@@ -380,16 +381,15 @@ const createLineSeries = (pais) => {
       opacity: 1,
     })
     circle.adapters.add("tooltipHTML", function (text, target) {
-      let divTool = `<div class="tooltip">`;
       if (target.dataItem) {
         const dataItem = target.dataItem.dataContext
+        let divTool = `<div class="tooltip"><p class="anio">${dataItem.anioString}</p>`;
 
         const hoverCountries = parsedData
           .filter((d) => d.anioString === dataItem.anioString && selectedCountries.includes(d.iso3))
           .map((d) => {
-            divTool += `<p class="anio">${d.anioString}</p>`;
             divTool += `<p class="pais"><span style='color:${d.colorPais};' class='punto'>&#9679</span>${d.pais}: ${d.valor_en_porcentaje.toFixed(2)}%</p>`;
-            // return divTool
+            return divTool
           })
           .map((d) => {
             return divTool
@@ -399,6 +399,7 @@ const createLineSeries = (pais) => {
           divTool += `</div>`;
           return arrPais
       }
+
       return text
     })
 
