@@ -2,7 +2,7 @@
 
 Gráfico de prueba para Fundar sobre Energía primaria proveniente de fuentes bajas de carbono
 
-![title](capture.jpg)
+![title](captureNew.jpg)
 
 ### Url prueba
 
