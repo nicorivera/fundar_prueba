@@ -186,6 +186,7 @@ const createChart = (divId) => {
       panY: false,
       wheelX: "none",
       wheelY: "none",
+      locationX: 0.5,
       layout: root.verticalLayout,
     })
   );
@@ -202,6 +203,9 @@ const createChart = (divId) => {
     strokeDasharray: [],
   });
 
+  cursor.lineX.set("visible", true); // Linea X si
+  cursor.lineY.set("visible", false); // Linea Y no
+
   // Colores del gráfico
   colors = chart.get("colors"); 
 
@@ -212,9 +216,7 @@ const createChart = (divId) => {
       min: new Date(1965, 1, 1).getTime(),
       max: new Date(2022, 1, 1).getTime(),
       renderer: am5xy.AxisRendererX.new(root, {}),
-      minPosition: 0.1,
-      maxPosition: 0.8,
-      visible: true
+      locationX: 0.5,
     })
   );
 
@@ -292,9 +294,6 @@ const createChart = (divId) => {
     paddingRight: 15,
   });
 
-  cursor.lineX.set("visible", true); // Linea X si
-  cursor.lineY.set("visible", false); // Linea Y no
-
   root.dateFormatter.set("dateFormat", "[bold]yyyy");
 
   legend = chart.children.push(am5.Legend.new(root, {}));
@@ -370,6 +369,7 @@ const createLineSeries = (pais) => {
       pointerOrientation: "horizontal",
       interactive: true,
       fill: "#000000",
+      locationX: 0.5,
       keepTargetHover: true,
     })
 
@@ -380,6 +380,7 @@ const createLineSeries = (pais) => {
     circle.states.create("hover", {
       opacity: 1,
     })
+    // TOOLTIP OK
     circle.adapters.add("tooltipHTML", function (text, target) {
       if (target.dataItem) {
         const dataItem = target.dataItem.dataContext
@@ -388,8 +389,12 @@ const createLineSeries = (pais) => {
         const hoverCountries = parsedData
           .filter((d) => d.anioString === dataItem.anioString && selectedCountries.includes(d.iso3))
           .map((d) => {
-            divTool += `<p class="pais"><span style='color:${d.colorPais};' class='punto'>&#9679</span>${d.pais}: ${d.valor_en_porcentaje.toFixed(2)}%</p>`;
-            return divTool
+            if(d.pais === dataItem.pais){
+              divTool += `<div class='rowPais'><p class="pais selected"><span style='color:${d.colorPais};' class='punto'>&#9679</span>${d.pais}: </p><p class='porc selected'>${d.valor_en_porcentaje.toFixed(2)}%</p></div>`;
+            } else {
+              divTool += `<div class='rowPais'><p class="pais"><span style='color:${d.colorPais};' class='punto'>&#9679</span>${d.pais}: </p><p class='porc'>${d.valor_en_porcentaje.toFixed(2)}%</p></div>`;
+            }
+            // return divTool
           })
           .map((d) => {
             return divTool
@@ -421,7 +426,31 @@ const createLineSeries = (pais) => {
   const fullBtn = document.getElementById("fullBtn");
   fullBtn.addEventListener("click", verFull);
 
+  // Nombres al final de las lineas
+  series.bullets.push((root, series, dataItem) => {
+   let lastIndex = 0;
+   if (series.dataItems.indexOf(dataItem) == lastIndex) {
+     return am5.Bullet.new(root, {
+       // opacity: 1,
+       sprite: am5.Label.new(root, {
+         fontFamily: 'Chivo Mono',
+         fontWeight: 500,
+         fontSize: 12,
+         fill: series.get("fill"),
+         textAlign: 'left',
+         paddingLeft: -10,
+         paddingTop: -10,
+         marginLeft: -20,
+         text: dataItem.dataContext.pais
+       })
+     });
+   }
+   });
+  
+  return series;
+  
 }
+
 createChart("chart-cont");
 fetchData();
 

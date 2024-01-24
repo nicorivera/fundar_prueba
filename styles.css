@@ -240,6 +240,18 @@ body {
     border: 1px solid black;
     padding: 5px 0;
     text-align: left;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.rowPais{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
 }
 .tooltip .anio{
     width: 100%;
@@ -252,18 +264,35 @@ body {
     border-bottom: 1px solid black;
     padding-bottom: 5px;
 }
-.tooltip .pais{
+.tooltip .rowPais .pais, .tooltip .rowPais .porc{
     font-family: "Chivo Mono";
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5;
     margin: 5px auto;
     padding: 0 10px;
+    text-align: left;
+    align-self: flex-start;
+    justify-self: flex-start;
 }
-.tooltip .pais .punto{
+.tooltip .rowPais .pais{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-grow: 1;
+}
+.tooltip .rowPais .pais.selected, .tooltip .rowPais .porc.selected{
+    font-weight: 600;
+}
+.tooltip .rowPais .pais .punto{
     font-size: 15px;
     margin: auto 10px;
     margin-left: 2px;
+}
+.tooltip .rowPais .porc{
+    text-align: right;
+    align-self: flex-end;
+    justify-self: flex-end;
 }
 .fuente, .nota{
     font-family: "Chivo Mono";
@@ -342,6 +371,6 @@ body {
     }
 }
 /* Esconde logo amCharts */
-.am5-tooltip-container, .am5-layer-30{
+.am5-layer-30{
     top: -10000px !important;
 }
