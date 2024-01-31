@@ -214,7 +214,7 @@ const createChart = (divId) => {
     am5xy.DateAxis.new(root, {
       baseInterval: { timeUnit: "year", count: 1 },
       min: new Date(1965, 1, 1).getTime(),
-      max: new Date(2022, 1, 1).getTime(),
+      max: new Date(2027, 1, 1).getTime(),
       renderer: am5xy.AxisRendererX.new(root, {}),
       locationX: 0.5,
     })
@@ -227,7 +227,7 @@ const createChart = (divId) => {
 
   firstDateLocation.get("label").setAll({
     text: 1965,
-    fontSize: 10,
+    fontSize: 9,
     fontWeight: 800,
     dx: 10,
     forceHidden: false,
@@ -240,7 +240,7 @@ const createChart = (divId) => {
 
   lastDateLocation.get("label").setAll({
     text: 2022,
-    fontSize: 10,
+    fontSize: 9,
     fontWeight: 800,
     dx: 5,
     forceHidden: false,
@@ -250,7 +250,7 @@ const createChart = (divId) => {
   let rendererX = xAxis.get("renderer");
 
   rendererX.labels.template.setAll({
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: "Chivo Mono",
     paddingTop: 15,
   });
@@ -438,9 +438,8 @@ const createLineSeries = (pais) => {
          fontSize: 12,
          fill: series.get("fill"),
          textAlign: 'left',
-         paddingLeft: -10,
-         paddingTop: -10,
-         marginLeft: -20,
+         paddingRight: 3,
+         paddingTop: -5,
          text: dataItem.dataContext.pais
        })
      });
